@@ -69,16 +69,10 @@ show_editor: true
 ```
 
 
-
-## About HACS in a monorepo
-
-This repository is organized as a monorepo.  
-If you want clean HACS auto-install flows for both parts, separate frontend/integration repos are often easier.  
-Manual install from this monorepo works reliably.
-
 ## Disclaimer
 
-This project is for orientation and personal tracking support only.  
+This project is for orientation and personal tracking support only.
+The sensor.menstruation_gauge may be used for automation as you see fit. An Automation template (adding item to a shopping list) for an example is found in the ReadMe.md of the lovelace-mentruation-gauge-card folder.
 It is not medical advice and not suitable as a reliable method for contraception or conception planning.
 
 ## AI note
