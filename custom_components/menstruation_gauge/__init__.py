@@ -15,6 +15,7 @@ import voluptuous as vol
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant, ServiceCall
+from homeassistant.helpers import config_validation as cv
 from homeassistant.helpers.storage import Store
 
 from . import utils
@@ -48,6 +49,8 @@ DATE_RE = r"^\d{4}-\d{2}-\d{2}$"
 SERVICE_SCHEMA_DATE = vol.Schema({vol.Required("date"): vol.All(str, vol.Match(DATE_RE))})
 SERVICE_SCHEMA_SET_HISTORY = vol.Schema({vol.Required("dates"): [vol.All(str, vol.Match(DATE_RE))]})
 SERVICE_SCHEMA_SET_DURATION = vol.Schema({vol.Required("days"): vol.All(vol.Coerce(int), vol.Range(min=1, max=14))})
+
+CONFIG_SCHEMA = cv.config_entry_only_config_schema()
 
 
 def _norm_iso(value: str) -> str | None:
