@@ -50,7 +50,7 @@ SERVICE_SCHEMA_DATE = vol.Schema({vol.Required("date"): vol.All(str, vol.Match(D
 SERVICE_SCHEMA_SET_HISTORY = vol.Schema({vol.Required("dates"): [vol.All(str, vol.Match(DATE_RE))]})
 SERVICE_SCHEMA_SET_DURATION = vol.Schema({vol.Required("days"): vol.All(vol.Coerce(int), vol.Range(min=1, max=14))})
 
-CONFIG_SCHEMA = cv.config_entry_only_config_schema()
+CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
 
 
 def _norm_iso(value: str) -> str | None:
