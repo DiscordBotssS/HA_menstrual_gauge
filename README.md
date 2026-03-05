@@ -35,7 +35,7 @@ Repository target: `https://github.com/nremey/HA_menstrual_gauge`
 
 ## Installation via HACS (Recommended)
 
-The integration automatically installs the Lovelace card when you install the integration - no separate installation needed!
+The integration automatically installs and registers the Lovelace card when you install the integration - no separate installation or manual resource configuration needed!
 
 ### Install Integration (Card Included)
 
@@ -54,7 +54,7 @@ menstruation_gauge:
 
 7. Restart Home Assistant again (if using YAML)
 
-**Note:** The Lovelace card is automatically copied to `/config/www/community/menstruation_gauge/menstruation-gauge-card.js` during integration setup. You just need to add it as a Lovelace resource (see below).
+**Note:** The Lovelace card is automatically registered and available immediately after setup. No manual resource configuration is required! After restarting, reload your browser/view (hard refresh recommended: `Ctrl+F5` or `Cmd+Shift+R`) to ensure the card is loaded.
 
 ## Manual Installation (without HACS)
 
@@ -70,21 +70,7 @@ menstruation_gauge:
 
 3. Restart Home Assistant.
 
-**Note:** The card file is automatically copied to `/config/www/community/menstruation_gauge/menstruation-gauge-card.js` when the integration loads. If you need to copy it manually, it's located at `custom_components/menstruation_gauge/frontend/menstruation-gauge-card.js`.
-
-4. Add Lovelace resource:
-
-## How to add Lovelace resource (UI steps)
-
-1. Open Home Assistant.
-2. Go to `Settings` -> `Dashboards`.
-3. Open your target dashboard.
-4. Click `⋮` (top right) -> `Resources`.
-5. Click `+ Add Resource`.
-6. Enter:
-   - URL: `/local/community/menstruation_gauge/menstruation-gauge-card.js`
-   - Type: `JavaScript Module`
-7. Save and reload browser (hard refresh recommended).
+**Note:** The card is automatically registered and available immediately after the integration loads. The card file is served from `custom_components/menstruation_gauge/www/menstruation-gauge-card.js` and is automatically added as a Lovelace resource - no manual configuration needed! After restarting, reload your browser/view (hard refresh recommended: `Ctrl+F5` or `Cmd+Shift+R`) to ensure the card is loaded.
 
 
 
