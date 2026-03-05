@@ -1,7 +1,7 @@
 {
   "domain": "menstruation_gauge",
   "name": "Menstruation Gauge",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "documentation": "https://github.com/nremey/HA_menstrual_gauge",
   "issue_tracker": "https://github.com/nremey/HA_menstrual_gauge/issues",
   "dependencies": [],
