@@ -1,5 +1,8 @@
 # HA_menstrual_gauge
 
+
+## Information!  sincs 2026 March, 6th: Install through HACS is bugged and doesn't work yet!
+
 <img width="30%" height="30%" alt="normal card view" src="https://github.com/user-attachments/assets/6fb8fb40-e42b-4243-bd52-3cb5f3d7bf8d" /> <img width="30%" height="30%" alt="click a day to set/delete a cycle start date" src="https://github.com/user-attachments/assets/cadb8113-fabb-4eb6-9611-a1901db311d4" />
 
 
@@ -70,7 +73,19 @@ menstruation_gauge:
 
 3. Restart Home Assistant.
 
-**Note:** The card is automatically registered and available immediately after the integration loads. The card file is served from `custom_components/menstruation_gauge/www/menstruation-gauge-card.js` and is automatically added as a Lovelace resource - no manual configuration needed! After restarting, reload your browser/view (hard refresh recommended: `Ctrl+F5` or `Cmd+Shift+R`) to ensure the card is loaded.
+**Note:** The card file is served from `custom_components/menstruation_gauge/www/menstruation-gauge-card.js` and is has to be added as a Lovelace resource! 
+
+## How to add Lovelace resource (UI steps)
+
+1. Open Home Assistant.
+2. Go to `Settings` -> `Dashboards`.
+3. Open your target dashboard.
+4. Click `⋮` (top right) -> `Resources`.
+5. Click `+ Add Resource`.
+6. Enter:
+   - URL: `custom_components/menstruation_gauge/www/menstruation-gauge-card.js`
+   - Type: `JavaScript Module`
+7. Save and reload browser (hard refresh recommended).
 
 
 
